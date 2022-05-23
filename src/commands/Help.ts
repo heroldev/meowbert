@@ -16,7 +16,7 @@ export const Help: Command = {
         { name: 'General Commands', value: '`/hello` - omg hey :3\n`/help` - returns this message' },
         { name: 'Question of the Day Commands', value: '`/addqotd` - adds a new Question of the Day\n`/qotdchannel` - (**Mod Only**) sets the channel where the Question of the Day is sent' },
       )
-      .setFooter({ text: 'meowbert v1.0.0', iconURL: 'https://i.imgur.com/QuUEvbD.png' });
+      .setFooter({ text: 'meowbert v1.0.0 - *better than Kanade*', iconURL: 'https://i.imgur.com/QuUEvbD.png' });
 
     await interaction.followUp({
       ephemeral: true,

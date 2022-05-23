@@ -1,0 +1,12 @@
+version: '2.2'
+
+services:
+  meowbert:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+    volumes:
+      - ./src:/home/node/app/src
+    container_name: meowbert-bot
+    command: npm run start
