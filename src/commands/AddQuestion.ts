@@ -1,4 +1,4 @@
-import { BaseCommandInteraction, Client, CommandInteraction, CommandInteractionOptionResolver, MessageEmbed } from "discord.js";
+import { BaseCommandInteraction, Client, CommandInteraction, CommandInteractionOptionResolver, MessageEmbed, Permissions } from "discord.js";
 import { ChannelTypes } from "discord.js/typings/enums";
 import dbAddQuestion from "../db/dbAddQuestion";
 import { dbSetQuestionChannel } from "../db/dbSetQuestionChannel";
@@ -18,22 +18,36 @@ export const AddQuestion: Command = {
   ],
   run: async (client: Client, interaction: BaseCommandInteraction) => {
 
-    let embed = new MessageEmbed()
-    let questionToAdd = interaction.options.get('question', true).value?.toString() || ""
+    if (interaction.memberPermissions?.has(Permissions.FLAGS.MANAGE_ROLES)) {
 
-    const questionId = await dbAddQuestion(questionToAdd).then((value: any) => {
-      return value.id
-    })
+      let embed = new MessageEmbed()
+      let questionToAdd = interaction.options.get('question', true).value?.toString() || ""
 
-    embed
+      const questionId = await dbAddQuestion(questionToAdd).then((value: any) => {
+        return value.id
+      })
+
+      embed
         .setColor('#d5e1ee')
         .setTitle('New QOTD Added!')
         .setDescription('New Question of the Day added to database: "' + questionToAdd + "\"")
-        .setFooter({ text: 'Question #' + questionId})
+        .setFooter({ text: 'Question #' + questionId })
 
-    await interaction.followUp({
-      ephemeral: true,
-      embeds: [embed],
-    })
+      await interaction.followUp({
+        ephemeral: true,
+        embeds: [embed],
+      })
+    } else {
+      const embed = new MessageEmbed()
+      embed
+        .setColor('#e74c3c')
+        .setTitle('Failed to add QOTD!')
+        .setDescription('This command is for administrators only.')
+
+      await interaction.followUp({
+        ephemeral: true,
+        embeds: [embed],
+      })
+    }
   }
 };

@@ -4,5 +4,8 @@ import { Help } from "./commands/Help";
 import { TestEmbed } from "./commands/TestEmbed";
 import { SendQuestionTo } from "./commands/SendQuestionTo";
 import { AddQuestion } from "./commands/AddQuestion";
+import { StopQuestion } from "./commands/StopQuestion";
+import { Status } from "./commands/Status";
+import { NewQuestion } from "./commands/NewQuestion";
 
-export const Commands: Command[] = [Hello, Help, SendQuestionTo, AddQuestion];
+export const Commands: Command[] = [Hello, Help, SendQuestionTo, AddQuestion, StopQuestion, Status, NewQuestion];

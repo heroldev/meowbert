@@ -5,7 +5,7 @@ import { dbSetQuestionChannel } from "../db/dbSetQuestionChannel";
 import { Command } from "../types/Command";
 
 export const SendQuestionTo: Command = {
-  name: "qotdchannel",
+  name: "startqotd",
   description: "Sets the Question of the Day (QOTD) channel",
   type: "CHAT_INPUT",
   options: [
