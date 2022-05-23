@@ -24,7 +24,7 @@ export default (client: Client): void => {
     await client.application.commands.set(Commands, guildId);
 
     // uncomment this line for deployment
-    // await client.application.commands.set([Commands]);
+    // await client.application.commands.set(Commands);
 
     console.log(`${client.user.username} now on-line in guild ` + guildId);
   });
