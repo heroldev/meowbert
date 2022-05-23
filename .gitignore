@@ -24,4 +24,4 @@
 
 # environment
 /img
-# .env
+.env
