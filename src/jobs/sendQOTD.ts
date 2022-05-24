@@ -6,7 +6,7 @@ import dbUseQuestion from "../db/dbUseQuestion";
 import { getRandomInt } from "../util/getRandomInt";
 const cron = require('cron')
 
-export const sendQOTD = cron.job('0 7 * * *', () => {
+export const sendQOTD = cron.job('*/1 * * * *', () => {
 
   if (!client.user || !client.application) {
     console.log("Error with question of the day job")
@@ -28,12 +28,15 @@ export const sendQOTD = cron.job('0 7 * * *', () => {
 
 
         dbGetMulti("SELECT guild_id, channel_id FROM qotd_channel").then((result: any) => {
+          console.log(result)
           result.forEach((row: any) => {
             client.channels.fetch(row.channel_id).then((channel) => {
+              console.log(channel)
               if (channel !== null) {
                 (channel as TextChannel).send({
                   embeds: [qotdEmbed]
                 })
+                console.log("meowbert sent new QOTD#" + chosenQuestion.id + " - " + chosenQuestion.question + " to channel " + channel.id)
               }
             })
           })
@@ -41,7 +44,7 @@ export const sendQOTD = cron.job('0 7 * * *', () => {
 
         dbUseQuestion(chosenQuestion.id, chosenQuestion.question)
 
-        console.log("meowbert sent new QOTD#" + chosenQuestion.id + " - " + chosenQuestion.question)
+        
       } else {
         // this is the "damn no more questions" case
         const qotdEmbed = new MessageEmbed()
