@@ -26,4 +26,4 @@
 /src/db/meowbert_db.sqlite3
 /.vscode
 /img
-.env
+*.env
