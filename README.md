@@ -12,5 +12,6 @@ make sure to create a `.env` file in the root directory with the following param
 DISCORD_API_TOKEN="*api token goes here*"
 DISCORD_CLIENT_TOKEN="*client token goes here*"
 TEST_GUILD_TOKEN="*test guild token goes here, if not building to production*"
+DEV_TOKEN="*your discord account ID goes here*"
 DB_FILE_PATH="./your/db/path/here"
 ```

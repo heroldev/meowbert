@@ -4,15 +4,23 @@ import dbGetMulti from "../db/dbGetMulti";
 import dbGetSingle from "../db/dbGetSingle";
 import dbUseQuestion from "../db/dbUseQuestion";
 import { getRandomInt } from "../util/getRandomInt";
-const cron = require('cron')
 
-export const sendQOTD = cron.job('0 12 * * *', () => {
+/**
+ * Sends a QOTD on demand
+ * @param redo - true uses the last-used QOTD, false uses a new QOTD
+ * @author Andrew Herold
+ */
+export const onDemandQOTD = (redo: boolean) => {
 
   if (!client.user || !client.application) {
-    console.log("Error with question of the day job")
+    console.log("Error with on-demand question of the day")
   } else {
+    let qotdSQL = "SELECT id, question from qotd_unused"
+    if (redo) {
+      qotdSQL = "SELECT * FROM qotd_used ORDER BY ID DESC LIMIT 1"
+    }
 
-    dbGetMulti("SELECT id, question from qotd_unused").then((result) => {
+    dbGetMulti(qotdSQL).then((result) => {
       const unusedQuestions: any[] = result as any[]
 
       if (unusedQuestions.length !== 0) {
@@ -31,19 +39,19 @@ export const sendQOTD = cron.job('0 12 * * *', () => {
           console.log(result)
           result.forEach((row: any) => {
             client.channels.fetch(row.channel_id).then((channel) => {
-              console.log(channel)
               if (channel !== null) {
                 (channel as TextChannel).send({
                   embeds: [qotdEmbed]
                 })
-                console.log("meowbert sent new QOTD#" + chosenQuestion.id + " - " + chosenQuestion.question + " to channel " + channel.id)
+                console.log("meowbert send an on-demand QOTD#" + chosenQuestion.id + " - " + chosenQuestion.question + " to channel " + channel.id)
               }
             })
           })
         })
 
-        dbUseQuestion(chosenQuestion.id, chosenQuestion.question)
-
+        if (!redo) {
+          dbUseQuestion(chosenQuestion.id, chosenQuestion.question)
+        }
         
       } else {
         // this is the "damn no more questions" case
@@ -71,4 +79,4 @@ export const sendQOTD = cron.job('0 12 * * *', () => {
 
   }
 
-})
+}

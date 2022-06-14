@@ -23,7 +23,7 @@ export const Status: Command = {
         { name: 'Build Date', value: process.env.BUILD_DATE || ''},
         { name: 'DB Information', value: num_questions["COUNT(*)"] + " questions ingested" },
       )
-      .setFooter({ text: 'meowbert v1.0.0 - *better than Kanade*', iconURL: 'https://i.imgur.com/QuUEvbD.png' });
+      .setFooter({ text: 'meowbert v1.3.0', iconURL: 'https://i.imgur.com/QuUEvbD.png' });
 
     await interaction.followUp({
       ephemeral: true,

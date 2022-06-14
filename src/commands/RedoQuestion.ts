@@ -6,19 +6,19 @@ import { getRandomInt } from "../util/getRandomInt"
 import { onDemandQOTD } from "../util/onDemandQOTD"
 require('dotenv').config()
 
-export const NewQuestion: Command = {
-  name: "newqotd",
-  description: "Sends a new QOTD to all registered channels, regardless of time.",
+export const RedoQuestion: Command = {
+  name: "redoqotd",
+  description: "Sends the last used QOTD to *all* registered QOTD channels.",
   type: "CHAT_INPUT",
   run: async (client: Client, interaction: BaseCommandInteraction) => {
 
     if (interaction.user.id === process.env.DEV_TOKEN) {
 
-      onDemandQOTD(false)
+      onDemandQOTD(true)
 
       const qotdEmbed = new MessageEmbed()
         .setColor('#d5e1ee')
-        .setTitle('New Question of the Day Sent!')
+        .setTitle('Re-do Question of the Day Sent!')
         .setDescription("I sure hope you know what you are doing.")
 
       await interaction.followUp({
@@ -30,7 +30,7 @@ export const NewQuestion: Command = {
       const embed = new MessageEmbed()
       embed
         .setColor('#e74c3c')
-        .setTitle('Failed to send new QOTD!')
+        .setTitle('Failed to re-send QOTD!')
         .setDescription('This command has locked permissions.')
 
       await interaction.followUp({
@@ -39,6 +39,5 @@ export const NewQuestion: Command = {
       })
     }
   }
-
 }
 
