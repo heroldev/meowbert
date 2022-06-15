@@ -1,6 +1,6 @@
 {
   "name": "meowbert",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "description": "meow. i'm a discord bot.",
   "main": "index.ts",
   "scripts": {
