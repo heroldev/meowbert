@@ -15,3 +15,6 @@ TEST_GUILD_TOKEN="*test guild token goes here, if not building to production*"
 DEV_TOKEN="*your discord account ID goes here*"
 DB_FILE_PATH="./your/db/path/here"
 ```
+
+## licensing
+see `LICENSE.txt`
