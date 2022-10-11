@@ -10,6 +10,13 @@ export const Pet: Command = {
         .setColor('#d5e1ee')
         .setTitle('omg! :3')
         .setDescription('ur pettin\' me! *purrs contently*')
+
+        const chance = Math.random()
+        if (chance < .125) {
+            // 12.5% chance to bite the user petting meowbert
+            embed.setTitle('monch')
+            .setDescription('*bites your hand*')
+        }
   
         await interaction.followUp({
             ephemeral: true,
