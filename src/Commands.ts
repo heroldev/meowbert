@@ -10,5 +10,6 @@ import { NewQuestion } from "./commands/NewQuestion";
 import { RedoQuestion } from "./commands/RedoQuestion";
 import { Broadcast } from "./commands/Broadcast";
 import { Pet } from "./commands/Pet";
+import { PetCount } from "./commands/PetCount";
 
-export const Commands: Command[] = [Hello, Help, SendQuestionTo, AddQuestion, StopQuestion, Status, NewQuestion, RedoQuestion, Broadcast, Pet];
+export const Commands: Command[] = [Hello, Help, SendQuestionTo, AddQuestion, StopQuestion, Status, NewQuestion, RedoQuestion, Broadcast, Pet, PetCount];
