@@ -6,10 +6,10 @@ import dbGetMulti from "./dbGetMulti"
  * @returns the total count of pets
  * @author heroldev (Andrew Herold)
  */
-export const dbIncrementPet = (user: string) => {
+export const dbGetPet = (user: string) => {
 
   return dbGetMulti("SELECT * from pet_count WHERE user_id=?", [user])
 
 }
 
-export default dbIncrementPet
+export default dbGetPet
