@@ -1,8 +1,8 @@
 BEGIN TRANSACTION;
-CREATE TABLE IF NOT EXISTS "qotd_channel" (
+CREATE TABLE IF NOT EXISTS "pet_count" (
 	"id"	INTEGER NOT NULL,
-	"guild_id"	varchar(50) NOT NULL,
-	"channel_id"	varchar(50) DEFAULT NULL,
+	"user_id"	varchar(50) NOT NULL,
+	"type"	INTEGER NOT NULL,
 	PRIMARY KEY("id" AUTOINCREMENT)
 );
 CREATE TABLE IF NOT EXISTS "qotd_unused" (
@@ -11,11 +11,24 @@ CREATE TABLE IF NOT EXISTS "qotd_unused" (
 	"date_added"	date DEFAULT NULL,
 	PRIMARY KEY("id" AUTOINCREMENT)
 );
+CREATE TABLE IF NOT EXISTS "qotd_channel" (
+	"id"	INTEGER NOT NULL,
+	"guild_id"	varchar(50) NOT NULL,
+	"channel_id"	varchar(50) DEFAULT NULL,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
 CREATE TABLE IF NOT EXISTS "qotd_used" (
 	"id"	INTEGER NOT NULL,
 	"qotd_id"	varchar(50) NOT NULL,
 	"question"	varchar(250) NOT NULL,
 	"date_used"	date NOT NULL,
+	PRIMARY KEY("id" AUTOINCREMENT)
+);
+CREATE TABLE IF NOT EXISTS "qotd_queue" (
+	"id"	INTEGER NOT NULL,
+	"question"	varchar(250) NOT NULL,
+	"user_id"	varchar(50) NOT NULL,
+	"date_added"	date DEFAULT NULL,
 	PRIMARY KEY("id" AUTOINCREMENT)
 );
 INSERT INTO "qotd_unused" VALUES (1,'What’s the most ridiculous fact you know?','2022-05-23T21:45:44.752Z');
@@ -110,7 +123,7 @@ INSERT INTO "qotd_unused" VALUES (89,'What is your favorite kind of pasta?','202
 INSERT INTO "qotd_unused" VALUES (90,'What''s your favorite restaurant?','2022-05-23T22:07:08.094Z');
 INSERT INTO "qotd_unused" VALUES (91,'What is your favorite fabric?','2022-05-23T22:07:16.367Z');
 INSERT INTO "qotd_unused" VALUES (92,'What is your favorite candy?','2022-05-23T22:07:23.696Z');
-INSERT INTO "qotd_unused" VALUES (93,'What is your favorite candy?','2022-05-23T22:07:31.867Z');
+INSERT INTO "qotd_unused" VALUES (93,'What's your hobby of choice?','2022-05-23T22:07:31.867Z');
 INSERT INTO "qotd_unused" VALUES (94,'What''s a place you dream of going to?','2022-05-23T22:07:40.722Z');
 INSERT INTO "qotd_unused" VALUES (95,'What is your favorite kind of cookie?','2022-05-23T22:07:50.368Z');
 INSERT INTO "qotd_unused" VALUES (96,'When have you first played Minecraft, if at all?','2022-05-23T22:08:12.922Z');
@@ -155,7 +168,7 @@ INSERT INTO "qotd_unused" VALUES (134,'Favorite kind of bread?','2022-05-23T22:1
 INSERT INTO "qotd_unused" VALUES (135,'What is your favorite type of USB?','2022-05-23T22:16:21.017Z');
 INSERT INTO "qotd_unused" VALUES (136,'What is your favorite subreddit? also, what is your favorite social media platform?','2022-05-23T22:16:50.583Z');
 INSERT INTO "qotd_unused" VALUES (137,'What is the rarest video game item you have obtained and how long did it take you to get it?','2022-05-23T22:16:59.993Z');
-INSERT INTO "qotd_unused" VALUES (138,'What is the rarest video game item you have obtained and how long did it take you to get it?','2022-05-23T22:17:08.688Z');
+INSERT INTO "qotd_unused" VALUES (138,'Favorite snack?','2022-05-23T22:17:08.688Z');
 INSERT INTO "qotd_unused" VALUES (139,'What is your favorite content to watch/listen on YouTube?','2022-05-23T22:17:20.040Z');
 INSERT INTO "qotd_unused" VALUES (140,'Do you collect anything? If so, what do you collect?','2022-05-23T22:17:30.161Z');
 INSERT INTO "qotd_unused" VALUES (141,'What is the worst hotel room you have ever stayed in?','2022-05-23T22:17:39.449Z');
@@ -163,7 +176,7 @@ INSERT INTO "qotd_unused" VALUES (142,'What is the longest amount of time you sp
 INSERT INTO "qotd_unused" VALUES (143,'What''s the longest amount of time you have spent asleep?','2022-05-23T22:18:07.991Z');
 INSERT INTO "qotd_unused" VALUES (144,'What is the worst instance where you have forgotten something?','2022-05-23T22:18:25.303Z');
 INSERT INTO "qotd_unused" VALUES (145,'What is your favorite flavor of Pop-Tart?','2022-05-23T22:18:40.405Z');
-INSERT INTO "qotd_unused" VALUES (146,'What is your favorite flavor of Pop-Tart?','2022-05-23T22:18:51.405Z');
+INSERT INTO "qotd_unused" VALUES (146,'If you were to be sworn into office, what book would you swear on?','2022-05-23T22:18:51.405Z');
 INSERT INTO "qotd_unused" VALUES (147,'What is your favorite kind of off-brand soda?','2022-05-23T22:19:00.016Z');
 INSERT INTO "qotd_unused" VALUES (148,'What is the longest amount of time you spent in traffic?','2022-05-23T22:19:12.145Z');
 INSERT INTO "qotd_unused" VALUES (149,'What is your favorite US Highway?','2022-05-23T22:19:19.162Z');
