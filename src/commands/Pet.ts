@@ -14,7 +14,7 @@ export const Pet: Command = {
         const chance = Math.random()
         if (chance < .125) {
             // 12.5% chance to bite the user petting meowbert
-            embed.setTitle('monch')
+            embed.setTitle('monch >:3')
             .setDescription('*bites your hand*')
         }
   
