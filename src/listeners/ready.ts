@@ -4,6 +4,9 @@ import { Commands } from "../Commands";
 import dbConnect from "../db/dbConnect";
 import dbCreate from "../db/dbCreate";
 
+/**
+ * The main bot entry point. Go for launch!
+ */
 export default (client: Client): void => {
   client.on("ready", async () => {
     if (!client.user || !client.application) {

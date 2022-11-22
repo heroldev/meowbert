@@ -1,5 +1,11 @@
 import dbRun from "./dbRun"
 
+/**
+ * Marks an unused question as used, and moves it to the used table.
+ * @param questionId the ID of the question to use
+ * @param question the text of the question
+ * @returns 
+ */
 export const dbUseQuestion = (questionId: number, question: string) => {
 
   let usedDate = new Date()

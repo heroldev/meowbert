@@ -3,6 +3,12 @@ import dbGetMulti from "../db/dbGetMulti";
 import { Command } from "../types/Command";
 require('dotenv').config()
 
+/**
+ * Broadcast Command for Meowbert
+ * Sends a specified broadcast message to all QOTD channels if the discord user that invoked the command has developer permissions
+ * Otherwise, logs the username who tried to invoke this developer-only command
+ * @author Andrew Herold (heroldev)
+ */
 export const Broadcast: Command = {
   name: "broadcast",
   description: "Send a custom message to *all* QOTD channels.",
@@ -73,12 +79,3 @@ export const Broadcast: Command = {
     }
   }
 }
-
-
-
-
-
-
-
-
-

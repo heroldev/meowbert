@@ -4,6 +4,11 @@ import dbAddQuestion from "../db/dbAddQuestion";
 import { dbSetQuestionChannel } from "../db/dbSetQuestionChannel";
 import { Command } from "../types/Command";
 
+/**
+ * Add Question of the Day command
+ * Adds a question of the day to the QOTD_queue table, through discord's slash command interface.
+ * @author heroldev (Andrew Herold)
+ */
 export const AddQuestion: Command = {
   name: "addqotd",
   description: "Adds a new Question of the Day (QOTD)",
@@ -23,7 +28,7 @@ export const AddQuestion: Command = {
       let embed = new MessageEmbed()
       let questionToAdd = interaction.options.get('question', true).value?.toString() || ""
 
-      const questionId = await dbAddQuestion(questionToAdd).then((value: any) => {
+      const questionId = await dbAddQuestion(questionToAdd, interaction.user.id).then((value: any) => {
         return value.id
       })
 
