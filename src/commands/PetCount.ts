@@ -1,7 +1,6 @@
 import { BaseCommandInteraction, Client, MessageEmbed } from "discord.js";
 import dbGetPet from "../db/dbGetPet";
 import { Command } from "../types/Command";
-import { PetType } from "../types/PetType";
 /**
  * Returns the amount of times a user has petted meowbert
  * @author heroldev (Andrew Herold)

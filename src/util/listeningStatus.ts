@@ -57,6 +57,11 @@ const statuses = [{
 },
 
 {
+  name: "Mario Kart Wii",
+  type: ActivityTypes.PLAYING as ExcludeEnum<typeof ActivityTypes, "CUSTOM">
+},
+
+{
   name: "Pokémon Black 2",
   type: ActivityTypes.PLAYING as ExcludeEnum<typeof ActivityTypes, "CUSTOM">
 },
@@ -64,6 +69,26 @@ const statuses = [{
 {
   name: "Pokémon Platinum",
   type: ActivityTypes.PLAYING as ExcludeEnum<typeof ActivityTypes, "CUSTOM">
+},
+{
+  name: "Markiplier",
+  type: ActivityTypes.WATCHING as ExcludeEnum<typeof ActivityTypes, "CUSTOM">
+},
+{
+  name: "Jerma985",
+  type: ActivityTypes.WATCHING as ExcludeEnum<typeof ActivityTypes, "CUSTOM">
+},
+{
+  name: "Star Wars",
+  type: ActivityTypes.WATCHING as ExcludeEnum<typeof ActivityTypes, "CUSTOM">
+},
+{
+  name: "NHL Hockey",
+  type: ActivityTypes.WATCHING as ExcludeEnum<typeof ActivityTypes, "CUSTOM">
+},
+{
+  name: "NCAA Hockey",
+  type: ActivityTypes.WATCHING as ExcludeEnum<typeof ActivityTypes, "CUSTOM">
 },
 ]
 

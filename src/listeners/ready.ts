@@ -19,7 +19,7 @@ export default (client: Client): void => {
     })
 
     // replace with BETA_GUILD_TOKEN for multi-person test server
-    let guildId = (process.env.BETA_GUILD_TOKEN || '')
+    let guildId = (process.env.TEST_GUILD_TOKEN || '')
 
     dbCreate(process.env.DB_FILE_PATH || '')
     
