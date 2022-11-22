@@ -17,5 +17,8 @@ DB_FILE_PATH="./your/db/path/here"
 BUILD_DATE="build info goes here, ideally a semantic version and a date"
 ```
 
+## icon source
+[here](https://picrew.me/image_maker/685226)
+
 ## licensing
 see `LICENSE.txt`
