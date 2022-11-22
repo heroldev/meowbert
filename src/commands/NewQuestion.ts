@@ -6,6 +6,11 @@ import { getRandomInt } from "../util/getRandomInt"
 import { onDemandQOTD } from "../util/onDemandQOTD"
 require('dotenv').config()
 
+/**
+ * NewQuestion command
+ * Sends a new QOTD to all registered channels, regardless of time
+ * @author heroldev (Andrew Herold)
+ */
 export const NewQuestion: Command = {
   name: "newqotd",
   description: "Sends a new QOTD to all registered channels, regardless of time.",
