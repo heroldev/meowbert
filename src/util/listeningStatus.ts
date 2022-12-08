@@ -2,6 +2,9 @@ import { ExcludeEnum } from "discord.js"
 import { ActivityTypes } from "discord.js/typings/enums"
 import { getRandomInt } from "./getRandomInt"
 
+/**
+ * An array of statuses that the bot can be doing at any time. Shows for discord rich presence.
+ */
 const statuses = [{
   name: "FastTracker II",
   type: ActivityTypes.LISTENING as ExcludeEnum<typeof ActivityTypes, "CUSTOM">
