@@ -5,6 +5,11 @@ import { dbSetQuestionChannel } from "../db/dbSetQuestionChannel";
 import { Command } from "../types/Command";
 import { dbDisableQuestion } from "../db/dbDisableQuestion";
 
+/**
+ * Removes a QOTD channel association from the database. 
+ * This command must be ran before meowbert is removed from a server, otherwise it will break.
+ * @author heroldev (Andrew Herold)
+ */
 export const StopQuestion: Command = {
   name: "stopqotd",
   description: "Disables the QOTD for this server",

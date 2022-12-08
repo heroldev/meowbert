@@ -1,6 +1,11 @@
 import { BaseCommandInteraction, Client, MessageEmbed } from "discord.js";
 import { Command } from "../types/Command";
 
+/**
+ * Hello Command
+ * A simple command to say hello to the user when executed.
+ * @author heroldev (Andrew Herold)
+ */
 export const Hello: Command = {
     name: "hello",
     description: "hi there!",

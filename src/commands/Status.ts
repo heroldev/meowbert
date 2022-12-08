@@ -5,6 +5,7 @@ import { Command } from "../types/Command";
 
 /**
  * Returns detailed information about Meowbert to the user who calls this command.
+ * @author heroldev (Andrew Herold)
  */
 export const Status: Command = {
   name: "status",

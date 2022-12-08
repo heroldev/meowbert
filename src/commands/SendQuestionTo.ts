@@ -4,6 +4,10 @@ import {Permissions } from "discord.js"
 import { dbSetQuestionChannel } from "../db/dbSetQuestionChannel";
 import { Command } from "../types/Command";
 
+/**
+ * Sets the question of the day to be sent to a desired channel within a given server.
+ * @author heroldev (Andrew Herold)
+ */
 export const SendQuestionTo: Command = {
   name: "startqotd",
   description: "Sets the Question of the Day (QOTD) channel",
