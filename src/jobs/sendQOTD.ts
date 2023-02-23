@@ -6,6 +6,10 @@ import dbUseQuestion from "../db/dbUseQuestion";
 import { getRandomInt } from "../util/getRandomInt";
 const cron = require('cron')
 
+/**
+ * A cron job to send a QOTD once a day at 7am CDT (12pm on TOR-1)
+ * @author heroldev (Andrew Herold)
+ */
 export const sendQOTD = cron.job('0 12 * * *', () => {
 
   if (!client.user || !client.application) {

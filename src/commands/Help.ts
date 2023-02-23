@@ -1,6 +1,11 @@
 import { BaseCommandInteraction, Client, MessageEmbed } from "discord.js";
 import { Command } from "../types/Command";
 
+/**
+ * Help Command
+ * Designed to output commands to inform the user of Meowbert's functionality
+ * @author heroldev (Andrew Herold)
+ */
 export const Help: Command = {
   name: "help",
   description: "Info and commands for meowbert",

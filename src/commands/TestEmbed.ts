@@ -2,6 +2,10 @@ import { BaseCommandInteraction, Client, MessageEmbed } from "discord.js";
 import dbGetMulti from "../db/dbGetMulti";
 import { Command } from "../types/Command";
 
+/**
+ * A command designed to test embed formats.
+ * @author heroldev (Andrew Herold)
+ */
 export const TestEmbed: Command = {
   name: "embed",
   description: "tests the embed",

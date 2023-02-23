@@ -6,6 +6,10 @@ import { getRandomInt } from "../util/getRandomInt"
 import { onDemandQOTD } from "../util/onDemandQOTD"
 require('dotenv').config()
 
+/**
+ * Re-sends the last used Question of the Day to all registered QOTD channels
+ * @author heroldev (Andrew Herold)
+ */
 export const RedoQuestion: Command = {
   name: "redoqotd",
   description: "Sends the last used QOTD to *all* registered QOTD channels.",

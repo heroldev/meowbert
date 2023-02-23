@@ -5,6 +5,9 @@ import interactionCreate from "./listeners/interactionCreate";
 import ready from "./listeners/ready";
 require('dotenv').config()
 
+/**
+ * Creates a new client
+ */
 export const client = new Client({
     intents: []
 });

@@ -8,7 +8,7 @@ import { getRandomInt } from "../util/getRandomInt";
 /**
  * Sends a QOTD on demand
  * @param redo - true uses the last-used QOTD, false uses a new QOTD
- * @author Andrew Herold
+ * @author heroldev (Andrew Herold)
  */
 export const onDemandQOTD = (redo: boolean) => {
 
