@@ -24,7 +24,7 @@ export default (client: Client): void => {
     dbCreate(process.env.DB_FILE_PATH || '')
     
     // uncomment this line for testing
-    await client.application.commands.set(Commands, guildId);
+    await client.application.commands.set([], guildId);
 
     // uncomment this line for deployment
     // await client.application.commands.set(Commands);

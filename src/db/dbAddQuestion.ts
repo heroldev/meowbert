@@ -10,7 +10,7 @@ export const dbAddQuestion = (question: string, user: string) => {
 
   let addedDate = new Date()
 
-  if (user !== process.env.DEV_TOKEN) {
+  if (user !== process.env.DEV_TOKEN || user !== process.env.ADDL_USER_TOKEN) {
     // user is a regular user
     return dbRun("INSERT into qotd_queue (question, date_added, user_id) VALUES (?,?,?)", [question, addedDate.toISOString(), user])
   } else {
